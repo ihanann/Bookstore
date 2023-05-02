@@ -1,0 +1,27 @@
+<! DOCTYPE HTML>
+<html xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+	<title>Bookstore</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+</head>
+	<body>
+		<h1>Book</h1>
+		<table>
+			<tbody>
+				<tr th:each = "book :${books}">
+					<td th:text = "${book.title}"></td>
+					<td th:text = "${book.author}"></td>
+					<td th:text = "${book.releaseYear}"></td>
+					<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<a href="/add" class="btn btn-primary">Add Book</a>
+		
+		
+	</body>
+
+</html>
